@@ -71,7 +71,7 @@ function App() {
             <div className="flex justify-center mb-3">
               <Popcorn className="w-12 h-12 text-yellow-500" />
             </div>
-            <h1 className="text-3xl font-bold text-white">PopChoice</h1>
+            <h1 className="text-3xl font-bold text-white">PikuChoice</h1>
           </div>
 
           {!showResults && !isLoading && (
