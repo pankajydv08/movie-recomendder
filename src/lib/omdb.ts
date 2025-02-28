@@ -1,12 +1,15 @@
 import axios from 'axios';
 
-const API_KEY = import.meta.env.OMDB; // Replace with your OMDB API key
+const API_KEY = process.env.OMDB; // Use environment variable for OMDB API key
+
+if (!API_KEY) {
+  throw new Error('OMDB API key is missing. Please set it in the environment variables.');
+}
 
 export async function getMoviePoster(title: string): Promise<string | null> {
   try {
     const response = await axios.get(`https://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${API_KEY}`);
     if (response.data && response.data.Poster) {
-      //console.log('Movie Poster URL:', response.data.Poster);
       return response.data.Poster;
     } else {
       console.log('No poster found for the movie:', title);
