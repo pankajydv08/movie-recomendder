@@ -4,7 +4,7 @@ const API_KEY = import.meta.env.OMDB; // Replace with your OMDB API key
 
 export async function getMoviePoster(title: string): Promise<string | null> {
   try {
-    const response = await axios.get(`http://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${API_KEY}`);
+    const response = await axios.get(`https://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${API_KEY}`);
     if (response.data && response.data.Poster) {
       //console.log('Movie Poster URL:', response.data.Poster);
       return response.data.Poster;
