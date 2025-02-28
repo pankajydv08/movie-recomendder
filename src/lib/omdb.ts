@@ -1,9 +1,11 @@
 import axios from 'axios';
 
-const API_KEY = process.env.OMDB; // Use environment variable for OMDB API key
+const API_KEY = import.meta.env.OMDB; // Use environment variable for OMDB API key
 
 if (!API_KEY) {
   throw new Error('OMDB API key is missing. Please set it in the environment variables.');
+}else{
+  console.log("API working")
 }
 
 export async function getMoviePoster(title: string): Promise<string | null> {
