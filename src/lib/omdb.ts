@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = '16cd21bc'; // Replace with your OMDB API key
+const API_KEY = import.meta.env.OMDB; // Replace with your OMDB API key
 
 export async function getMoviePoster(title: string): Promise<string | null> {
   try {
